@@ -1,0 +1,31 @@
+{
+  "name": "aulatest",
+  "version": "1.0.0",
+  "description": "Test assignment Aula Education",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node --presets env,stage-2 src/index.js",
+    "test": "jest",
+    "test_watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/opture/aulatest"
+  },
+  "author": "PH Westman",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "express": "^4.16.4",
+    "find": "^0.2.9",
+    "music-metadata": "^3.1.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^23.6.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.5",
+    "supertest": "^3.3.0"
+  }
+}
