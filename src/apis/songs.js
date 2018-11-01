@@ -1,3 +1,4 @@
+import fs from 'fs';
 import { getAllSongs } from '../lib/songslibrary';
 
 function SongsApi(app){
@@ -12,6 +13,26 @@ function SongsApi(app){
       next(err)
     })
   })
+  app.get('/songs/play/:song', function(req,res){
+	
+    var song = req.params.song; 
+    
+    var file = __dirname + '/../../' + song;
+    console.log(file)
+    fs.exists(file,function(exists){
+      if(exists)
+      {
+        var rstream = fs.createReadStream(file);
+        rstream.pipe(res);
+      }
+      else
+      {
+        res.send("Its a 404");
+        res.end();
+      }
+    
+    });
+  });
 
 }
 export default SongsApi
